@@ -1,0 +1,50 @@
+dta-fighter {
+    margin: 1em;
+    display: inline-block;
+}
+dta-fighter > div {
+    padding: .5em;
+    border: 1px solid #666;
+    border-radius: .5em;
+    min-height: 155px;
+    text-align: center;
+}
+
+dta-fighter > div.active {
+    background: #eee;
+    box-shadow: 10px 10px 5px #656565;
+}
+
+dta-fighter img {
+    display: inline-block;
+    max-width: 80px;
+}
+
+dta-fighter button img {
+    width: 2em;
+}
+
+dta-fighter table {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+dta-fighter table td {
+    text-align: center;
+    font-weight: bold;
+}
+
+dta-fighter table td img {
+    width: 3em;
+}
+
+dta-fighter div {
+    text-align: center;
+    margin: 0;
+}
+
+dta-fighter div i.red {
+    vertical-align: middle;
+    color: red;
+}

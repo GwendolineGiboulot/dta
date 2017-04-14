@@ -1,0 +1,46 @@
+<div ng-class="{ active: $ctrl.active()  }">
+    <img 
+        ng-if="$ctrl.fighter.life > 0"
+        ng-src="https://www.gravatar.com/avatar/{{ $ctrl.md5 }}?d=wavatar" 
+        alt="{{ $ctrl.fighter.email }}">
+
+    <img ng-if="$ctrl.fighter.life === 0" src="/img/skull.png" alt="{{ $ctrl.fighter.email }}">
+
+    <table>
+        <tr>
+            <td><img src="/img/hearts.svg"></td>
+            <td><img src="/img/potion-ball.svg"></td>            
+        </tr>
+        <tr>
+            <td>{{ $ctrl.fighter.life }}</td>
+            <td>{{ $ctrl.fighter.mana }}</td>
+        </tr>
+    </table>
+
+    <div>
+
+        <div class="btn-group" ng-if="!$ctrl.isDefender()">
+            <button 
+                ng-disabled="!$ctrl.active()"
+                ng-click="$ctrl.fight()" 
+                class="btn btn-primary" type="button">
+                <img src="/img/pointy-sword.svg">
+            </button>
+            <button 
+                ng-disabled="!$ctrl.active() || $ctrl.noMana()"
+                ng-click="$ctrl.fight(true)" 
+                class="btn btn-primary" type="button">
+                <img src="/img/heavy-lightning.svg">
+            </button>
+        </div>
+
+        <button 
+            ng-if="$ctrl.isDefender()"
+            ng-disabled="!$ctrl.FightService.waitingForTarget"
+            ng-click="$ctrl.suffer()" 
+            class="btn btn-primary" type="button">
+            <img src="/img/crosshair.svg">
+        </button>
+
+    </div>
+</div>
